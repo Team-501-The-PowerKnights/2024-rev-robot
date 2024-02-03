@@ -139,8 +139,9 @@ public class MAXSwerveModule {
   public SwerveModulePosition getPosition() {
     SmartDashboard.putNumber("Swerve.Drive Temp[" + drivingCANId + "]", m_drivingSparkMax.getMotorTemperature());
     SmartDashboard.putNumber("Swerve.Turn Temp[" + turningCANId + "]", m_turningSparkMax.getMotorTemperature());
-    if ((m_drivingSparkMax.getMotorTemperature() > 35) || (m_turningSparkMax.getMotorTemperature() > 35)) {
-      throw new IllegalStateException("Motor Temp too high; Shutting Down");
+    if ((m_drivingSparkMax.getMotorTemperature() > 40) || (m_turningSparkMax.getMotorTemperature() > 40)) {
+      throw new IllegalStateException("Motor Temp too high; Shutting Down: D=" + m_drivingSparkMax.getMotorTemperature()
+          + ", T=" + m_turningSparkMax.getMotorTemperature());
     }
 
     // Apply chassis angular offset to the encoder position to get the position
