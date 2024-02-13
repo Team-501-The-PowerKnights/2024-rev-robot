@@ -143,11 +143,23 @@ public final class Constants {
 
 public static final class IntakeConstants {
     // SPARK MAX CAN IDs 
+    public static final int kIntakeLeft = 20;
+    public static final int kIntakeRight = 21;
+    //Speed Controller Speeds
+    public static final double kIntakeSpeed = 1;
+    public static final int kIntakeCurrentLimit = 80;
+}
+
+public static final class FeederConstants {
+    // SPARK MAX CAN IDs 
     public static final int kFeederLeft = 20;//22;
     public static final int kFeederRight = 21;//23;
     //Speed Controller Speeds
-    public static final double kIntakeSpeed = 1;
-
+    public static final double kFeederSpeed = 1;
+    public static final int kFeederCurrentLimit = 80;
 }
+
+
+
 
 }
