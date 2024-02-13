@@ -159,7 +159,14 @@ public static final class FeederConstants {
     public static final int kFeederCurrentLimit = 80;
 }
 
-
+public static final class IncrementerConstants {
+    // SPARK MAX CAN IDs 
+    public static final int kIncrementerLeft = 20;//30;
+    public static final int kIncrementerRight = 21;//31;
+    //Speed Controller Speeds
+    public static final double kIncrementerSpeed = 1;
+    public static final int kIncrementerCurrentLimit = 80;
+}
 
 
 }

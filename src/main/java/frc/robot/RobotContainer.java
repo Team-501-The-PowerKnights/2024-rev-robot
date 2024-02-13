@@ -22,6 +22,7 @@ import frc.robot.Constants.OIConstants;
 // import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Feeder;
+import frc.robot.subsystems.Incrementer;
 import edu.wpi.first.wpilibj2.command.Command;
 // import edu.wpi.first.wpilibj2.command.RunCommand;
 // import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
@@ -39,6 +40,7 @@ public class RobotContainer {
  // private final DriveSubsystem m_robotDrive = new DriveSubsystem();
     private final Intake m_intake = new Intake();
     private final Feeder m_feeder = new Feeder();
+    private final Incrementer m_incrementer = new Incrementer();
 
   // The driver's controller
   XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
@@ -80,12 +82,18 @@ public class RobotContainer {
     //         m_robotDrive));
      //new JoystickButton(m_operatorController, 1)
        //  .onTrue(new RunCommand(() -> m_intake.runIntake(),m_intake));
-    
+
+       //Intake controls:
         m_operatorController.leftBumper().whileTrue(m_intake.runIntake());
         m_operatorController.leftTrigger().whileTrue(m_intake.ReverseIntake());
         //m_operatorController.a().whileTrue(new RunCommand(() -> m_intake.runIntake(),m_intake));
+        //Feeder Controls:
         m_operatorController.rightBumper().whileTrue(m_feeder.runFeeder());
         m_operatorController.rightTrigger().whileTrue(m_feeder.ReverseFeeder());
+
+        //Incrementer Controls:
+        m_operatorController.b().whileTrue(m_incrementer.runIncrementer());
+        m_operatorController.y().whileTrue(m_incrementer.ReverseIncrementer());
 
       }
 
