@@ -37,7 +37,7 @@ public class Incrementer extends SubsystemBase {
             );
     }
     //Use this command to "eject" a note back onto the floor
-    public Command ReverseIncrementer() {
+    public Command reverseIncrementer() {
         return this.startEnd(
             () -> {setIncrementerSpeed(kIncrementerSpeed * -0.5);}
             ,() -> {stop();}

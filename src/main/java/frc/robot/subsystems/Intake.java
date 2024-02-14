@@ -40,7 +40,7 @@ public class Intake extends SubsystemBase {
             );
     }
     //Use this command to "eject" a note back onto the floor
-    public Command ReverseIntake() {
+    public Command reverseIntake() {
         return this.startEnd(
             () -> {setIntakeSpeed(kIntakeSpeed * -0.5);}
             ,() -> {stop();}

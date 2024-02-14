@@ -40,7 +40,7 @@ public class Feeder extends SubsystemBase {
             );
     }
     //Use this command to "eject" a note back onto the floor
-    public Command ReverseFeeder() {
+    public Command reverseFeeder() {
         return this.startEnd(
             () -> {setFeederSpeed(kFeederSpeed * -0.5);}
             ,() -> {stop();}

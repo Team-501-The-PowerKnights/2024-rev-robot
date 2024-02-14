@@ -168,5 +168,13 @@ public static final class IncrementerConstants {
     public static final int kIncrementerCurrentLimit = 80;
 }
 
+public static final class LauncherConstants {
+    // SPARK MAX CAN IDs 
+    public static final int kLauncherLeft = 20;//32;
+    public static final int kLauncherRight = 21;//33;
+    //Speed Controller Speeds
+    public static final double kLauncherSpeed = 1;
+    public static final int kLauncherCurrentLimit = 80;
+}
 
 }
