@@ -24,6 +24,7 @@ import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Feeder;
 import frc.robot.subsystems.Incrementer;
 import frc.robot.subsystems.Launcher;
+import frc.robot.subsystems.Mast;
 import edu.wpi.first.wpilibj2.command.Command;
 // import edu.wpi.first.wpilibj2.command.RunCommand;
 // import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
@@ -43,6 +44,7 @@ public class RobotContainer {
     private final Feeder m_feeder = new Feeder();
     private final Incrementer m_incrementer = new Incrementer();
     private final Launcher m_launcher = new Launcher();
+    private final Mast m_mast = new Mast();
 
   // The driver's controller
   XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
@@ -101,6 +103,8 @@ public class RobotContainer {
         m_operatorController.a().whileTrue(m_launcher.runLauncher());
         m_operatorController.x().whileTrue(m_launcher.reverseLauncher());
         
+        //Mast Controls:
+        m_operatorController.leftStick().whileTrue(m_mast.mastUpDown(m_operatorController.getLeftX()));
       }
 
   /**

@@ -10,27 +10,27 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 
 public class Feeder extends SubsystemBase {
 
-    CANSparkMax feederLeft;
+    //CANSparkMax feederLeft;
     CANSparkMax feederRight;
     double feederSpeed;
 
     public Feeder() {
-        feederLeft = new CANSparkMax(kFeederLeft, MotorType.kBrushless);
+//        feederLeft = new CANSparkMax(kFeederLeft, MotorType.kBrushless);
         feederRight = new CANSparkMax(kFeederRight, MotorType.kBrushless);
-        feederLeft.setSmartCurrentLimit(kFeederCurrentLimit);
+        //feederLeft.setSmartCurrentLimit(kFeederCurrentLimit);
         feederRight.setSmartCurrentLimit(kFeederCurrentLimit);
         feederRight.setInverted(true);
-        feederRight.follow(feederLeft);
+        //feederRight.follow(feederLeft);
         feederSpeed = kFeederSpeed;
         System.out.println("Feeder Constructed!!");
     }
     //Sets the speed of the lead motor
     public void setFeederSpeed(double speed) {
-        feederLeft.set(speed);
+        feederRight.set(speed);
     }
     //Sets the speed of the lead motor to 0
     public void stop() {
-        feederLeft.set(0);
+        feederRight.set(0);
     }
     //Use this command to pull a note off the floor
     public Command runFeeder() {

@@ -143,8 +143,8 @@ public final class Constants {
 
 public static final class IntakeConstants {
     // SPARK MAX CAN IDs 
-    public static final int kIntakeLeft = 20;
-    public static final int kIntakeRight = 21;
+    public static final int kIntakeFront = 20;
+    public static final int kIntakeRear = 21;
     //Speed Controller Speeds
     public static final double kIntakeSpeed = 1;
     public static final int kIntakeCurrentLimit = 80;
@@ -152,8 +152,8 @@ public static final class IntakeConstants {
 
 public static final class FeederConstants {
     // SPARK MAX CAN IDs 
-    public static final int kFeederLeft = 20;//22;
-    public static final int kFeederRight = 21;//23;
+//    public static final int kFeederLeft = 20;//22;
+    public static final int kFeederRight = 22;
     //Speed Controller Speeds
     public static final double kFeederSpeed = 1;
     public static final int kFeederCurrentLimit = 80;
@@ -176,5 +176,16 @@ public static final class LauncherConstants {
     public static final double kLauncherSpeed = 1;
     public static final int kLauncherCurrentLimit = 80;
 }
+public static final class MastConstants {
+    // SPARK MAX CAN IDs 
+    public static final int kMastLeft = 40;
+    public static final int kMastRight = 41;
+    //Speed Controller Speeds
+    public static final double kMastSpeed = 1;
+    public static final int kMastCurrentLimit = 80;
+}
+
+
+
 
 }

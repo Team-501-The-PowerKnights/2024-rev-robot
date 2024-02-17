@@ -10,27 +10,27 @@ import edu.wpi.first.wpilibj2.command.Command;
 //import frc.robot.Robot;
 
 public class Intake extends SubsystemBase {
-    CANSparkMax intakeLeft;
-    CANSparkMax intakeRight;
+    CANSparkMax intakeFront;
+    CANSparkMax intakeRear;
     double intakeSpeed;
 
     public Intake(){
-        intakeLeft = new CANSparkMax(kIntakeLeft,MotorType.kBrushless);
-        intakeRight = new CANSparkMax(kIntakeRight,MotorType.kBrushless);
-        intakeLeft.setSmartCurrentLimit(kIntakeCurrentLimit);
-        intakeRight.setSmartCurrentLimit(kIntakeCurrentLimit);
-        intakeRight.setInverted(true);
-        intakeRight.follow(intakeLeft);
+        intakeFront = new CANSparkMax(kIntakeFront,MotorType.kBrushless);
+        intakeRear = new CANSparkMax(kIntakeRear,MotorType.kBrushless);
+        intakeFront.setSmartCurrentLimit(kIntakeCurrentLimit);
+        intakeRear.setSmartCurrentLimit(kIntakeCurrentLimit);
+        intakeRear.setInverted(true);
+        intakeRear.follow(intakeFront);
         intakeSpeed = kIntakeSpeed;
         System.out.println("Intake Constructed!!");
     }
     //Sets the speed of the lead motor
     public void setIntakeSpeed(double speed) {
-        intakeLeft.set(speed);
+        intakeFront.set(speed);
     }
     //Sets the speed of the lead motor to 0
     public void stop() {
-        intakeLeft.set(0);
+        intakeFront.set(0);
     }
     //Use this command to pull a note off the floor
     public Command runIntake() {
